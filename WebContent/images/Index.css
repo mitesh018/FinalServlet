@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+hr {
+color:sienna;
+}
+p {
+margin-left:20px;
+}
+body {
+background-image:url("images/bg.jpg");
+}
+span{
+font-face:Calibri;
+font-size: 20px;
+}
+input{
+color:#abcd34;
+}

@@ -26,12 +26,7 @@ public class CreateTable extends HttpServlet {
 	        con = DriverManager.getConnection (path, user, password);
 	        Statement st = con.createStatement ();
 			PrintWriter out = response.getWriter();
-			String SQLQ ="drop table if exists Quotes";
-			st.executeUpdate(SQLQ);
-			SQLQ="create table Quotes(quote VARCHAR(200),author VARCHAR(20));";
-			st.executeUpdate(SQLQ);
-			SQLQ="LOAD DATA LOCAL INFILE 'c:/Quotes.txt' INTO TABLE Quotes LINES TERMINATED BY '\r\n';";
-			st.executeUpdate(SQLQ);
+			String SQLQ;
 			SQLQ="select * from Quotes";
 			st.executeQuery(SQLQ);
 			out.println("<html><head></head><body>");

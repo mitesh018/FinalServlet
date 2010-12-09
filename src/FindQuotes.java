@@ -26,14 +26,23 @@ public class FindQuotes extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			//String FindQuotes = request.getParameter("quotes");
 			out.println("<html><head>");
-			out.println("<title>Resutl for Word</title></head><body>");
-			out.println("<table border=1>");
+			out.println("<title>Resutl for Word</title>");
+			out.println("<style type=text/css>body{background-image:url(images/bg.jpg);");
+			out.println("background-repeat:repeat-x;}</style>");
+			out.println("</head><body>");
+			out.println("<table border=0 align=center>");
+			out.println("<tr><td colspan=2 ><img src=\"images/banner.jpg\"/></td></tr>");
 			out.println("<tr><th>Quotes</th><th>Author</th></tr>");
 			String SQLQ = "select * from Quotes where quote like '%"+request.getParameter("quotes")+"%';";
 			ResultSet rs1 = st.executeQuery (SQLQ);
 			String col1,col2;
+			
 			while (rs1.next ()){
+				
 				col1 = rs1.getString(1);
+				if(col1==null){
+					out.println("<tr><td><h3>Sorry No result  Found</h3></td></tr>");
+				}
 				col2 = rs1.getString(2);
 				out.println("<tr><td>"+col1+"</td><td>"+col2+"</td></tr>");
 			}

@@ -1,0 +1,68 @@
+<html>
+<head>
+
+<title>Admin Controls </title>
+<script type="text/javascript">
+function validate()
+{
+valid = true;
+
+if(document.admin.username.value=="")
+{
+	alert("Please Enter Username ");
+	return false;
+	}
+if(document.admin.password.value=="")
+	{
+		alert("Please Enter Password ");
+		return false;
+	
+	}
+
+return valid;
+}</script>
+<style type="text/css">
+hr {
+color:sienna;
+}
+p {
+margin-left:20px;
+}
+body {
+background-image:url("images/bg.jpg");
+background-repeat:repeat-x;
+}
+span{
+font-face:Calibri;
+font-size: 20px;
+}
+input{
+color:#ff0000;
+font-face:Calibri;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+<form action="CreateTable"  method="POST" name="admin" id="admin" onsubmit="return validate()";>
+<table align="center">
+<tr><td colspan="2"><img src="images/banner.jpg"/></td></tr>
+<tr>
+	<td align="right"><span>UserName :-</span></td>
+	<td align="left"> <input type="text" name="username" id="username"></td>
+</tr>
+<tr>
+	<td align="right"><span>Password :-</span></td>
+	<td align="left"> <input type="password" name="password" id="password"></td>
+</tr>
+<tr>
+	<td colspan="2">&nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><input type="submit" value="Search Word"></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>

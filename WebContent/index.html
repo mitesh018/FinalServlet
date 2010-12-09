@@ -2,13 +2,51 @@
 <html>
 <head>
 <title>Find Quotes</title>
+
+<script type="text/javascript">
+function validate()
+{
+valid = true;
+
+if(document.QuoteForm.quotes.value=="")
+{
+	alert("Please Enter Word:- ");
+	return false;
+	}
+
+return valid;
+}
+</script>
+<style type="text/css">
+hr {
+color:sienna;
+}
+p {
+margin-left:20px;
+}
+body {
+background-image:url("images/bg.jpg");
+background-repeat:repeat-x;
+}
+span{
+font-face:Calibri;
+font-size: 20px;
+}
+input{
+color:#ff0000;
+border-style:solid;
+border-color:#C0C0C0;
+border-width:2px;
+}
+</style>
 </head>
-<body>
-<form action="FindQuotes" method="POST">
+<body >
+<form action="FindQuotes"  method="POST" name="QuoteForm" id="QuoteForm" onsubmit="return validate()";>
 <table align="center">
+<tr><td colspan="2"><img src="images/banner.jpg"/></td></tr>
 <tr>
-	<td>Enter Word For Search:-</td>
-	<td> <input type="text" name="quotes"></td>
+	<td align="right"><span>Enter Word For Search:-</span></td>
+	<td align="left"> <input type="text" name="quotes" id="quotes"></td>
 </tr>
 <tr>
 	<td colspan="2">&nbsp;</td>
